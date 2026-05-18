@@ -1,0 +1,12 @@
+# Video original (151 MB - usar hero-video-compressed.mp4)
+hero-video.mp4
+
+# Duplicata
+008-caixa-corte-alca-5 (1).jpg
+
+# Claude Code
+.claude/
+
+# npm
+package-lock.json
+node_modules/

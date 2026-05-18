@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orçamento — Splendida Embalagens</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        select { background-image: none; }
+    </style>
+</head>
+<body class="bg-[#ffffff] text-[#000000] antialiased selection:bg-[#39ff14] selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html"><img src="splendidalogo.png" alt="Splendida Embalagens" class="h-20 w-auto"></a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-sm font-medium text-gray-600 hover:text-[#5636d1] transition-colors">Home</a>
+                    <a href="porque-a-splendida.html" class="text-sm font-medium text-gray-600 hover:text-[#5636d1] transition-colors">Splendida</a>
+                    <a href="qualidade-e-sustentabilidade.html" class="text-sm font-medium text-gray-600 hover:text-[#5636d1] transition-colors">Sustentabilidade</a>
+                    <a href="logistica.html" class="text-sm font-medium text-gray-600 hover:text-[#5636d1] transition-colors">Logística</a>
+                    <a href="contato.html" class="text-sm font-medium text-gray-600 hover:text-[#5636d1] transition-colors">Contato</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    
+                    <a href="orcamento.html" class="hidden md:inline-flex bg-[#002950] text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-black transition-colors">Solicitar Orçamento</a>
+                <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center w-10 h-10 rounded-full bg-[#002950] text-white" aria-label="Menu">
+                    <iconify-icon icon="solar:hamburger-menu-linear" width="1.4em" id="hamburger-icon"></iconify-icon>
+                </button>
+                </div>
+            </div>
+        </div>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg">
+        <div class="px-4 py-6 space-y-1">
+            <a href="index.html" class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#5636d1] hover:bg-gray-50 rounded-xl transition-colors">Home</a>
+            <a href="porque-a-splendida.html" class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#5636d1] hover:bg-gray-50 rounded-xl transition-colors">Splendida</a>
+            <a href="qualidade-e-sustentabilidade.html" class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#5636d1] hover:bg-gray-50 rounded-xl transition-colors">Sustentabilidade</a>
+            <a href="logistica.html" class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#5636d1] hover:bg-gray-50 rounded-xl transition-colors">Logística</a>
+            <a href="contato.html" class="block px-4 py-3 text-sm font-medium text-gray-700 hover:text-[#5636d1] hover:bg-gray-50 rounded-xl transition-colors">Contato</a>
+            <div class="pt-4 border-t border-gray-100">
+                <a href="orcamento.html" class="block text-center bg-[#002950] text-white px-6 py-3.5 rounded-full text-sm font-semibold hover:bg-black transition-colors">Solicitar Orçamento</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+    <!-- Header -->
+    <header class="pt-20 pb-16 lg:pt-28 lg:pb-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#5636d1]/10 text-[#5636d1] text-xs font-semibold uppercase tracking-widest mb-8">
+                    <iconify-icon icon="solar:document-text-linear" width="1.2em"></iconify-icon>
+                    Cotação online
+                </div>
+                <h1 class="text-5xl lg:text-6xl tracking-tighter leading-[1.1] font-semibold mb-6">Faça sua cotação online</h1>
+                <p class="text-lg text-gray-600 leading-relaxed">Preencha o formulário abaixo. Respondemos em média em <strong>3 horas</strong> durante o horário comercial.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Form -->
+    <section class="pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <form id="orcamento-form" class="space-y-10" novalidate>
+
+                <!-- Web3Forms -->
+                <input type="hidden" name="access_key" value="1240ea59-9677-48a8-9e86-ca0deac501a2">
+                <input type="hidden" name="subject" value="Novo pedido de orçamento — Splendida Embalagens">
+                <input type="hidden" name="from_name" value="Site Splendida Embalagens">
+                <input type="checkbox" name="botcheck" style="display:none">
+
+                <!-- STEP 1: Dados da Empresa + Sidebar -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                    <div class="lg:col-span-2">
+                        <div>
+                            <h2 class="text-xl font-semibold tracking-tight mb-6 pb-4 border-b border-gray-100">Dados da empresa</h2>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Razão Social / Nome da Empresa *</label>
+                                    <input type="text" name="Razão Social" required placeholder="Nome da sua empresa" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Cidade *</label>
+                                    <input type="text" name="Cidade" required placeholder="São Paulo" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">CNPJ</label>
+                                    <input type="text" name="CNPJ" placeholder="00.000.000/0001-00" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Nome do Contato *</label>
+                                    <input type="text" name="Nome do Contato" required placeholder="Seu nome" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Telefone / WhatsApp *</label>
+                                    <input type="tel" name="Telefone" required placeholder="(11) 99999-9999" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">E-mail *</label>
+                                    <input type="email" name="E-mail" required placeholder="email@empresa.com.br" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Endereço</label>
+                                    <input type="text" name="Endereço" placeholder="Rua, número, bairro" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-1 space-y-6">
+                        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                            <h3 class="font-semibold tracking-tight mb-6">Por que escolher a Splendida?</h3>
+                            <div class="space-y-5">
+                                <div class="flex gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#5636d1]/10 flex items-center justify-center text-[#5636d1]"><iconify-icon icon="solar:clock-circle-linear" width="1.2em"></iconify-icon></div>
+                                    <div><div class="text-sm font-semibold">Resposta em 3h</div><div class="text-xs text-gray-500 mt-1">Cotação rápida em horário comercial</div></div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#5636d1]/10 flex items-center justify-center text-[#5636d1]"><iconify-icon icon="solar:test-tube-linear" width="1.2em"></iconify-icon></div>
+                                    <div><div class="text-sm font-semibold">Amostra em 3 dias úteis</div><div class="text-xs text-gray-500 mt-1">Protótipo físico antes da produção</div></div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#5636d1]/10 flex items-center justify-center text-[#5636d1]"><iconify-icon icon="solar:buildings-3-linear" width="1.2em"></iconify-icon></div>
+                                    <div><div class="text-sm font-semibold">Fábrica própria de chapas</div><div class="text-xs text-gray-500 mt-1">Menor preço, maior velocidade</div></div>
+                                </div>
+                                <div class="flex gap-3">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[#5636d1]/10 flex items-center justify-center text-[#5636d1]"><iconify-icon icon="solar:leaf-linear" width="1.2em"></iconify-icon></div>
+                                    <div><div class="text-sm font-semibold">100% Reciclado</div><div class="text-xs text-gray-500 mt-1">Papéis de origem reciclada</div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#32373c] rounded-2xl p-8 text-white">
+                            <h3 class="font-semibold tracking-tight mb-4">Prefere falar diretamente?</h3>
+                            <p class="text-sm text-gray-300 mb-6">Nossa equipe de vendas está pronta para te atender.</p>
+                            <a href="https://api.whatsapp.com/send/?phone=5511978274627&text&type=phone_number&app_absent=0" target="_blank" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-3 rounded-xl text-sm font-medium mb-3"><iconify-icon icon="solar:chat-round-dots-linear" width="1.2em"></iconify-icon>(11) 94519-0641 — WhatsApp</a>
+                            <a href="tel:1128151023" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-3 rounded-xl text-sm font-medium mb-3"><iconify-icon icon="solar:phone-linear" width="1.2em"></iconify-icon>(11) 2815-1023 — Telefone</a>
+                            <a href="mailto:vendas2@splendidaembalagens.com.br" class="flex items-center gap-2 bg-white/10 hover:bg-white/20 transition-colors px-4 py-3 rounded-xl text-sm font-medium"><iconify-icon icon="solar:letter-linear" width="1.2em"></iconify-icon>vendas2@splendidaembalagens.com.br</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Dados da Caixa de Papelão - LARGURA TOTAL -->
+                <div>
+                    <h2 class="text-xl font-semibold tracking-tight mb-2 pb-4 border-b border-gray-100">Dados da Caixa de Papelão</h2>
+                    <p class="text-sm text-gray-600 mb-4">Clique no modelo de caixa que você deseja *</p>
+                    <p class="text-sm font-medium text-gray-700 mb-3">Modelo da Caixa de Papelão</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-5 gap-3" id="modelo-grid">
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="001"><input type="radio" name="Modelo da Caixa" value="001 — Caixa Maleta" class="sr-only" required><img src="001_maleta-5.jpg" alt="001 Caixa Maleta" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">001 CAIXA MALETA</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="002"><input type="radio" name="Modelo da Caixa" value="002 — Caixa Corte Vinco Tampa e Fundo" class="sr-only"><img src="002-caixa-corte-5.jpg" alt="002 Corte Vinco Tampa e Fundo" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">002 CAIXA CORTE VINCO TAMPA E FUNDO</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="003"><input type="radio" name="Modelo da Caixa" value="003 — Meia Maleta" class="sr-only"><img src="003-meia-maleta-5.jpg" alt="003 Meia Maleta" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">003 MEIA MALETA</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="004"><input type="radio" name="Modelo da Caixa" value="004 — Caixa Maleta Aba Total" class="sr-only"><img src="004-caixa-maleta-5.jpg" alt="004 Caixa Maleta Aba Total" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">004 CAIXA MALETA ABA TOTAL</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="005"><input type="radio" name="Modelo da Caixa" value="005 — Caixa com Fundo Automático" class="sr-only"><img src="005-caixa-fundo-automatico-5.jpg" alt="005 Caixa com Fundo Automático" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">005 CAIXA COM FUNDO AUTOMÁTICO</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="006"><input type="radio" name="Modelo da Caixa" value="006 — Caixa Corte Vinco" class="sr-only"><img src="006-caixa-vinco-5.jpg" alt="006 Caixa Corte Vinco" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">006 CAIXA CORTE VINCO</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="007"><input type="radio" name="Modelo da Caixa" value="007 — Divisórias" class="sr-only"><img src="007-divisorias-5.jpg" alt="007 Divisórias" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">007 DIVISÓRIAS</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="008"><input type="radio" name="Modelo da Caixa" value="008 — Caixa Corte Vinco com Alça" class="sr-only"><img src="008-caixa-corte-alca-5.jpg" alt="008 Caixa Corte Vinco com Alça" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">008 CAIXA CORTE VINCO COM ALÇA</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="009"><input type="radio" name="Modelo da Caixa" value="009 — Meia Maleta Caixa Corte Vinco" class="sr-only"><img src="009-meia-maleta-vinco-5.jpg" alt="009 Meia Maleta Caixa Corte Vinco" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">009 MEIA MALETA CAIXA CORTE VINCO</span></label>
+                        <label class="modelo-card cursor-pointer border-2 border-gray-200 rounded-xl p-4 flex flex-col items-center gap-3 hover:border-[#002950] transition-colors" data-value="010"><input type="radio" name="Modelo da Caixa" value="010 — Tabuleiro" class="sr-only"><img src="010-tabuleiro-5.jpg" alt="010 Tabuleiro" class="w-full h-40 object-contain"><span class="text-xs font-semibold text-center text-gray-600 leading-snug mt-1">010 TABULEIRO</span></label>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Como medir + Qualidade + Submit -->
+                <div class="max-w-3xl space-y-10">
+
+                        <!-- Como medir -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-2">
+                            <div>
+                                <h3 class="text-base font-semibold tracking-tight mb-4">Como medir a Caixa de Papelão</h3>
+                                <img src="medida-1.jpg.jpg" alt="Como medir a caixa de papelão" class="w-48 rounded-xl">
+                            </div>
+                            <div class="flex flex-col justify-center gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Quantidade de caixas</label>
+                                    <input type="number" name="Quantidade de Caixas" required placeholder="Digite a quantidade desejada" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                </div>
+                                <div>
+                                    <div class="flex items-center gap-2 flex-wrap">
+                                        <span class="text-sm font-medium text-gray-700 whitespace-nowrap">Comprimento</span>
+                                        <input type="number" name="Comprimento (mm)" required placeholder="mm" class="w-20 px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                        <span class="text-sm font-medium text-gray-700 whitespace-nowrap">X Largura</span>
+                                        <input type="number" name="Largura (mm)" required placeholder="mm" class="w-20 px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                        <span class="text-sm font-medium text-gray-700 whitespace-nowrap">X Altura</span>
+                                        <input type="number" name="Altura (mm)" required placeholder="mm" class="w-20 px-3 py-2 bg-gray-50 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#5636d1]/20 focus:border-[#5636d1] transition-colors">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Qualidade da Caixa -->
+                        <div>
+                            <h2 class="text-xl font-semibold tracking-tight mb-2 pb-4 border-b border-gray-100">Qualidade da Caixa</h2>
+                            <p class="text-xs text-gray-500 mb-4">*selecione abaixo o tipo de papelão que deseja</p>
+                            <div class="grid grid-cols-1 sm:grid-cols-[180px_1fr] gap-6">
+
+                                <!-- Tipo de papelão -->
+                                <div class="space-y-3" id="qualidade-grid">
+                                    <label class="qualidade-card cursor-pointer border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center gap-2 hover:border-[#002950] transition-colors" data-value="simples">
+                                        <input type="radio" name="Qualidade do Papelão" value="Papelão Pardo Simples — Duplex Onda C" class="sr-only" required>
+                                        <img src="onda%20c/onda_c.jpg" alt="Papelão Pardo Simples" class="w-full max-h-32 object-contain rounded-lg">
+                                        <span class="text-xs font-semibold text-gray-700 text-center">Papelão Pardo Simples<br><span class="font-normal text-gray-500">(Duplex Onda C)</span></span>
+                                    </label>
+                                    <label class="qualidade-card cursor-pointer border-2 border-gray-200 rounded-xl p-3 flex flex-col items-center gap-2 hover:border-[#002950] transition-colors" data-value="duplo">
+                                        <input type="radio" name="Qualidade do Papelão" value="Papelão Pardo Duplo — Triplex Onda BC" class="sr-only">
+                                        <img src="onda%20bc/onda_c.jpg" alt="Papelão Pardo Duplo" class="w-full max-h-32 object-contain rounded-lg">
+                                        <span class="text-xs font-semibold text-gray-700 text-center">Papelão Pardo Duplo<br><span class="font-normal text-gray-500">(Triplex Onda BC)</span></span>
+                                    </label>
+                                </div>
+
+                                <!-- Estruturas do papelão (dinâmico) -->
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700 mb-3">Estruturas do papelão:</p>
+
+                                    <!-- Onda C -->
+                                    <div id="estruturas-c" class="hidden grid grid-cols-3 sm:grid-cols-5 gap-2">
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 37/C — Coluna 3,5" class="sr-only">
+                                            <img src="onda%20c/2k.jpg" alt="SPL 37/C" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 37/C - Coluna 3,5</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 42/C — Coluna 4,2" class="sr-only">
+                                            <img src="onda%20c/5k.jpg" alt="SPL 42/C" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 42/C - Coluna 4,2</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 45/C — Coluna 4,7" class="sr-only">
+                                            <img src="onda%20c/12k.jpg" alt="SPL 45/C" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 45/C - Coluna 4,7</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 50/C — Coluna 5,4" class="sr-only">
+                                            <img src="onda%20c/15k.jpg" alt="SPL 50/C" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 50/C - Coluna 5,4</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 55/C — Coluna 6,2" class="sr-only">
+                                            <img src="onda%20c/18k.jpg" alt="SPL 55/C" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 55/C - Coluna 6,2</span>
+                                        </label>
+                                    </div>
+
+                                    <!-- Onda BC -->
+                                    <div id="estruturas-bc" class="hidden grid grid-cols-2 sm:grid-cols-4 gap-2">
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 65/BC — Coluna 6,0" class="sr-only">
+                                            <img src="onda%20bc/20k.jpg" alt="SPL 65/BC" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 65/BC - Coluna 6,0</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 68/BC — Coluna 6,6" class="sr-only">
+                                            <img src="onda%20bc/24k.jpg" alt="SPL 68/BC" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 68/BC - Coluna 6,6</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 71/BC — Coluna 7,5" class="sr-only">
+                                            <img src="onda%20bc/30k.jpg" alt="SPL 71/BC" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 71/BC - Coluna 7,5</span>
+                                        </label>
+                                        <label class="estrutura-card cursor-pointer border-2 border-gray-200 rounded-xl p-2 flex flex-col items-center gap-1 hover:border-[#002950] transition-colors">
+                                            <input type="radio" name="Estrutura do Papelão" value="SPL 86/BC — Coluna 9,4" class="sr-only">
+                                            <img src="onda%20bc/45k.jpg" alt="SPL 86/BC" class="w-full h-16 object-contain">
+                                            <span class="text-[9px] font-semibold text-center text-gray-600 leading-tight">SPL 86/BC - Coluna 9,4</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Fechamento + Impressão -->
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mt-8">
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700 mb-3">Fechamento da caixa *</p>
+                                    <div class="flex flex-wrap gap-4">
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Fechamento da Caixa" value="Cola" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">Cola</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Fechamento da Caixa" value="Grampo" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">Grampo</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Fechamento da Caixa" value="Sem Fechamento" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">Sem Fechamento</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-700 mb-3">Impressão da caixa *</p>
+                                    <div class="flex flex-wrap gap-4">
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Impressão da Caixa" value="1 Cor" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">1 cor</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Impressão da Caixa" value="2 Cores" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">2 cores</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Impressão da Caixa" value="3 Cores" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">3 cores</span>
+                                        </label>
+                                        <label class="flex items-center gap-2 cursor-pointer">
+                                            <input type="radio" name="Impressão da Caixa" value="Sem Impressão" class="accent-[#002950]">
+                                            <span class="text-sm text-gray-700">Sem Impressão</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Feedback de envio -->
+                        <div id="form-success" class="hidden items-center gap-3 bg-green-50 border border-green-200 text-green-800 px-5 py-4 rounded-xl text-sm font-medium">
+                            <iconify-icon icon="solar:check-circle-bold" width="1.4em" class="text-green-500 flex-shrink-0"></iconify-icon>
+                            Orçamento enviado com sucesso! Nossa equipe entrará em contato em até 3 horas.
+                        </div>
+                        <div id="form-error" class="hidden items-center gap-3 bg-red-50 border border-red-200 text-red-800 px-5 py-4 rounded-xl text-sm font-medium">
+                            <iconify-icon icon="solar:close-circle-bold" width="1.4em" class="text-red-500 flex-shrink-0"></iconify-icon>
+                            Ocorreu um erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="w-full bg-[#002950] text-white py-5 rounded-xl text-sm font-semibold uppercase tracking-widest transition-all duration-300 hover:bg-[#001f3f] hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2">
+                            <iconify-icon icon="solar:plain-linear" width="1.2em" id="submit-icon"></iconify-icon>
+                            <span id="submit-text">ENVIAR ORÇAMENTO</span>
+                        </button>
+                </div>
+        </form>
+    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white pt-20 pb-10 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="lg:col-span-2 pr-4">
+                    <a href="index.html" class="inline-block mb-6"><img src="splendidalogo.png" alt="Splendida Embalagens" class="h-20 w-auto"></a>
+                    <p class="text-sm text-gray-500 leading-relaxed mb-4 max-w-sm">Rua São Roque, 1135 — Vila Japão<br>Itaquaquecetuba-SP, CEP 08599-020</p>
+                    <p class="text-sm text-gray-500 mb-1"><a href="tel:1128151023" class="hover:text-[#5636d1] transition-colors">(11) 2815-1023</a></p>
+                    <p class="text-sm text-gray-500 mb-1"><a href="https://api.whatsapp.com/send/?phone=5511978274627&text&type=phone_number&app_absent=0" class="hover:text-[#5636d1] transition-colors">(11) 94519-0641 (WhatsApp)</a></p>
+                    <p class="text-sm text-gray-500 mb-8"><a href="mailto:vendas2@splendidaembalagens.com.br" class="hover:text-[#5636d1] transition-colors">vendas2@splendidaembalagens.com.br</a></p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm mb-6 text-[#000000]">Navegação</h4>
+                    <ul class="space-y-4">
+                        <li><a href="porque-a-splendida.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Por que a Splendida</a></li>
+                        <li><a href="qualidade-e-sustentabilidade.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Qualidade e Sustentabilidade</a></li>
+                        <li><a href="logistica.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Logística</a></li>
+                        <li><a href="patrocinio.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Patrocínio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-sm mb-6 text-[#000000]">Atendimento</h4>
+                    <ul class="space-y-4">
+                        <li><a href="orcamento.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Solicitar Orçamento</a></li>
+                        <li><a href="contato.html" class="text-sm text-gray-500 hover:text-[#5636d1] transition-colors">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-xs text-gray-400">© 2026 Splendida Embalagens. Todos os direitos reservados. · Desenvolvido por <a href="https://www.instagram.com/dynamo.digital" target="_blank" class="hover:text-[#39ff14] transition-colors">Dynamo Digital</a></p>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/splendidaembalagens" class="text-gray-400 hover:text-[#39ff14] transition-colors" target="_blank"><iconify-icon icon="mdi:facebook" width="1.2em"></iconify-icon></a>
+                    <a href="https://www.instagram.com/splendida_embalagens" class="text-gray-400 hover:text-[#39ff14] transition-colors" target="_blank"><iconify-icon icon="mdi:instagram" width="1.2em"></iconify-icon></a>
+                    <a href="https://www.linkedin.com/company/caixas-de-papel-o-splendida-embalagens/" class="text-gray-400 hover:text-[#39ff14] transition-colors" target="_blank"><iconify-icon icon="mdi:linkedin" width="1.2em"></iconify-icon></a>
+                    <a href="https://www.youtube.com/@splendidalp" class="text-gray-400 hover:text-[#39ff14] transition-colors" target="_blank"><span class="sr-only">YouTube</span><iconify-icon icon="mdi:youtube" width="1.2em"></iconify-icon></a>
+                    <a href="https://www.tiktok.com/@splendidaembalage" class="text-gray-400 hover:text-[#39ff14] transition-colors" target="_blank"><span class="sr-only">TikTok</span><iconify-icon icon="mdi:tiktok" width="1.2em"></iconify-icon></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://api.whatsapp.com/send/?phone=5511978274627&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 rounded-full shadow-lg"
+       style="background-color: #25D366;"
+       aria-label="Fale conosco no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-8 h-8" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+    <style>
+        @keyframes wa-pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
+            50% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+        }
+        a[href*="wa.me"] { animation: wa-pulse 2.5s ease-in-out infinite; }
+        .modelo-card.selected { border-color: #002950; background-color: #f0f4ff; }
+        .modelo-card.selected span { color: #002950; }
+        .qualidade-card.selected { border-color: #002950; background-color: #39ff14; color: white; }
+        .qualidade-card.selected span { color: white; }
+        .estrutura-card.selected { border-color: #39ff14; background-color: #39ff14; }
+        .estrutura-card.selected span { color: #002950; }
+    </style>
+    <script>
+        // Seleção de modelo de caixa
+        document.querySelectorAll('.modelo-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.modelo-card').forEach(function(c) { c.classList.remove('selected'); });
+                card.classList.add('selected');
+            });
+        });
+
+        // Seleção de tipo de papelão + exibição dinâmica de estruturas
+        var estruturasC  = document.getElementById('estruturas-c');
+        var estruturasBC = document.getElementById('estruturas-bc');
+
+        document.querySelectorAll('.qualidade-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                document.querySelectorAll('.qualidade-card').forEach(function(c) { c.classList.remove('selected'); });
+                card.classList.add('selected');
+
+                var val = card.dataset.value;
+                document.querySelectorAll('.estrutura-card').forEach(function(e) { e.classList.remove('selected'); });
+                document.querySelectorAll('[name="Estrutura do Papelão"]').forEach(function(r) { r.checked = false; });
+
+                if (val === 'simples') {
+                    estruturasC.classList.remove('hidden');
+                    estruturasBC.classList.add('hidden');
+                } else {
+                    estruturasBC.classList.remove('hidden');
+                    estruturasC.classList.add('hidden');
+                }
+            });
+        });
+
+        // Seleção de estrutura
+        document.querySelectorAll('.estrutura-card').forEach(function(card) {
+            card.addEventListener('click', function() {
+                var parent = card.closest('#estruturas-c, #estruturas-bc');
+                parent.querySelectorAll('.estrutura-card').forEach(function(c) { c.classList.remove('selected'); });
+                card.classList.add('selected');
+            });
+        });
+
+        // Envio do formulário
+        document.getElementById('orcamento-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            var btn     = document.getElementById('submit-btn');
+            var icon    = document.getElementById('submit-icon');
+            var text    = document.getElementById('submit-text');
+            var success = document.getElementById('form-success');
+            var error   = document.getElementById('form-error');
+
+            // Validação básica dos campos obrigatórios de texto
+            var required = this.querySelectorAll('input[required], textarea[required]');
+            var valid = true;
+            required.forEach(function(f) { if (!f.value.trim()) valid = false; });
+            if (!valid) {
+                error.querySelector ? null : null;
+                error.classList.remove('hidden'); error.classList.add('flex');
+                error.lastElementChild.textContent = 'Preencha todos os campos obrigatórios antes de enviar.';
+                return;
+            }
+
+            btn.disabled = true;
+            icon.setAttribute('icon', 'solar:spinner-linear');
+            text.textContent = 'Enviando…';
+            success.classList.add('hidden'); success.classList.remove('flex');
+            error.classList.add('hidden');   error.classList.remove('flex');
+
+            try {
+                var res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) });
+                var data = await res.json();
+                if (data.success) {
+                    success.classList.remove('hidden'); success.classList.add('flex');
+                    this.reset();
+                    document.querySelectorAll('.modelo-card, .qualidade-card, .estrutura-card').forEach(function(c) { c.classList.remove('selected'); });
+                    estruturasC.classList.add('hidden');
+                    estruturasBC.classList.add('hidden');
+                } else {
+                    throw new Error(data.message);
+                }
+            } catch {
+                error.classList.remove('hidden'); error.classList.add('flex');
+            } finally {
+                btn.disabled = false;
+                icon.setAttribute('icon', 'solar:plain-linear');
+                text.textContent = 'ENVIAR ORÇAMENTO';
+            }
+        });
+    </script>
+
+    <script>
+        (function() {
+            var btn  = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var icon = document.getElementById('hamburger-icon');
+            if (!btn) return;
+            btn.addEventListener('click', function() {
+                var closed = menu.classList.toggle('hidden');
+                icon.setAttribute('icon', closed ? 'solar:hamburger-menu-linear' : 'solar:close-circle-linear');
+            });
+            // Close menu when a link inside it is clicked
+            menu.querySelectorAll('a').forEach(function(a) {
+                a.addEventListener('click', function() {
+                    menu.classList.add('hidden');
+                    icon.setAttribute('icon', 'solar:hamburger-menu-linear');
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
