@@ -35,10 +35,8 @@
         .segment-card.in-view { animation: cardEnter 0.55s cubic-bezier(0.22,1,0.36,1) forwards; }
         .segment-card.done { opacity: 1; }
         .segment-card.done:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,41,80,0.11) !important; border-color: #5636d1 !important; }
-        @media (min-width: 768px) {
-            .hero-title { text-shadow: 0 0 24px #fff, 0 0 48px #fff, 0 0 8px #fff; }
-            .hero-text  { text-shadow: 0 0 16px #fff, 0 0 32px #fff; }
-        }
+        .hero-title { -webkit-text-stroke: 2px white; paint-order: stroke fill; }
+        .hero-text  { -webkit-text-stroke: 0.5px white; paint-order: stroke fill; }
     </style>
 </head>
 <body class="bg-[#ffffff] text-[#000000] antialiased selection:bg-[#39ff14] selection:text-white">
@@ -99,7 +97,7 @@
                         <span class="font-light text-[#002950] block mt-2">embalagens de papelão.</span>
                     </h1>
                     <p class="hero-text mt-8 text-lg text-[#002950] max-w-lg leading-relaxed font-medium">
-                        Nós embalamos resultado e lucro. Soluções inteligentes em caixas de papelão para as necessidades mercadológicas das mais simples às mais complexas.
+                        Provemos soluções em caixa de papelão a fim de suprir as necessidades mercadológicas das simples as mais complexas.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row gap-4">
                         <a href="porque-a-splendida.html" class="inline-flex justify-center items-center bg-[#002950] text-white px-8 py-4 rounded-full text-sm font-medium transition-all duration-300 hover:bg-gradient-to-r hover:from-[#002950] hover:to-[#5636d1] hover:shadow-lg">

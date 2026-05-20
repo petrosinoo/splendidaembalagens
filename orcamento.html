@@ -483,7 +483,13 @@
             error.classList.add('hidden');   error.classList.remove('flex');
 
             try {
-                var res  = await fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(this) });
+                var formObj = {};
+                new FormData(this).forEach(function(value, key) { formObj[key] = value; });
+                var res  = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                    body: JSON.stringify(formObj)
+                });
                 var data = await res.json();
                 if (data.success) {
                     success.classList.remove('hidden'); success.classList.add('flex');
