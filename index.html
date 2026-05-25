@@ -37,7 +37,20 @@
         .segment-card.done:hover { transform: translateY(-6px); box-shadow: 0 16px 36px rgba(0,41,80,0.11) !important; border-color: #5636d1 !important; }
         .hero-title { -webkit-text-stroke: 2px white; paint-order: stroke fill; }
         .hero-text  { -webkit-text-stroke: 0.5px white; paint-order: stroke fill; }
-    </style>
+        @font-face {
+        font-family: 'BankGothic';
+        src: url('Bank-Gothic-Font/BankGothicMediumBT.ttf') format('truetype');
+        font-weight: 400 700;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'BankGothic';
+        src: url('Bank-Gothic-Font/BankGothicLtBTLight.ttf') format('truetype');
+        font-weight: 300;
+        font-display: swap;
+    }
+    h1, h2, h3, h4, h5, h6 { font-family: 'BankGothic', sans-serif; }
+</style>
 </head>
 <body class="bg-[#ffffff] text-[#000000] antialiased selection:bg-[#39ff14] selection:text-white">
 
