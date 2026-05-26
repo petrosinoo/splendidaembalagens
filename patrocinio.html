@@ -197,15 +197,15 @@
 
                 <!-- Card: David Barreto -->
                 <div class="snap-start flex-shrink-0 w-[300px] md:w-auto bg-white rounded-2xl overflow-hidden flex flex-col" style="box-shadow: 0 4px 20px rgba(86,54,209,0.10);">
-                    <div class="relative h-72 overflow-hidden bg-gradient-to-br from-[#002950] to-[#5636d1] flex items-center justify-center">
-                        <div class="text-center">
-                            <div class="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center mx-auto mb-3">
-                                <span class="text-3xl font-bold text-white">DB</span>
-                            </div>
-                            <p class="text-white/70 text-sm">Foto em breve</p>
-                        </div>
-                        <div class="absolute bottom-3 left-3">
+                    <div class="relative h-72 overflow-hidden">
+                        <img id="david-img-0" src="foto%20david.png" alt="David Barreto" class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700">
+                        <img id="david-img-1" src="foto%20david%202.png" alt="David Barreto 2" class="absolute inset-0 w-full h-full object-cover object-top transition-opacity duration-700 opacity-0">
+                        <div class="absolute bottom-3 left-3 z-10">
                             <span class="inline-flex items-center gap-1 bg-[#002950]/80 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1 rounded-full">Atos Jiu-Jitsu · Faixa Azul</span>
+                        </div>
+                        <div class="absolute bottom-3 right-3 z-10 flex gap-1.5">
+                            <button onclick="cardSlide('david',0)" class="w-2 h-2 rounded-full bg-white/90 david-dot transition-all" data-idx="0"></button>
+                            <button onclick="cardSlide('david',1)" class="w-2 h-2 rounded-full bg-white/40 david-dot transition-all" data-idx="1"></button>
                         </div>
                     </div>
                     <div class="p-6 flex flex-col flex-1">
@@ -364,7 +364,8 @@
         (function() {
             var cards = {
                 luiza: { current: 0, total: 2 },
-                sofia: { current: 0, total: 2 }
+                sofia: { current: 0, total: 2 },
+                david: { current: 0, total: 2 }
             };
             window.cardSlide = function(name, idx) {
                 var c = cards[name];
