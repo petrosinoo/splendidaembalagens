@@ -18,7 +18,7 @@ jobs:
           server: ftp.splendidaembalagens.com.br
           username: splendidaembalagens
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /www/
+          server-dir: /
           local-dir: ./
           exclude: |
             **/.git*
