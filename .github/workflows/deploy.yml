@@ -1,0 +1,27 @@
+name: Deploy to KingHost
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.splendidaembalagens.com.br
+          username: splendidaembalagens
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /www/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .github/**
